@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>CarCloudAccess</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style type="text/css">
-			* {
-				box-sizing: border-box;
-			}
+<head>
+    <title>CarCloudAccess</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
 
-			body {
-				margin: 0;
-				padding: 0;
-				background: #ffffff;
-				text-align: center;
-			}
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            text-align: center;
+        }
 
-			img {
-				display: inline-block;
-				vertical-align: middle;
-				max-width: 100%;
-				height: auto;
-				-ms-interpolation-mode: bicubic;
-			}
-		</style>
-		<script src="https://cdn.jsdelivr.net/gh/imagindeveloper/carcloudaccess@v2.0.0-alpha/dist/bundle.min.js"></script>
-	</head>
-	<body>
-    <img src="https://lpl.imagin.studio/meta/pix.png"
-         data-carcloudaccess-make="Alfa Romeo"
-         data-carcloudaccess-model="Giulia"
-         data-carcloudaccess-angle="01"
-         data-carcloudaccess-filetype="jpg"
-         data-carcloudaccess-compare="original"
-         data-carcloudaccess-width="1200"
-         data-carcloudaccess-tailoring="leaseplan"
-         data-carcloudaccess-dome="opq"
-         data-carcloudaccess-steering="lhd"
-         data-carcloudaccess-modelyear="2018"
-         data-carcloudaccess-transmission="a"
-         data-carcloudaccess-bodyvariant="5"
-         data-carcloudaccess-bodysize=""
-         data-carcloudaccess-interior="433"
-         data-carcloudaccess-trim="super"
-         data-carcloudaccess-bodycolor="200"
-         data-carcloudaccess-roofcolor="414"
-         data-carcloudaccess-rimid="68p"
-    />
-	<script>
-      const imgParams = {
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            height: auto;
+            -ms-interpolation-mode: bicubic;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/imagindeveloper/carcloudaccess@v2.0.0-alpha/dist/bundle.min.js"></script>
+</head>
+<body>
+<img src="https://lpl.imagin.studio/meta/pix.png"
+     data-carcloudaccess-make="Alfa Romeo"
+     data-carcloudaccess-model="Giulia"
+     data-carcloudaccess-angle="01"
+     data-carcloudaccess-filetype="jpg"
+     data-carcloudaccess-compare="original"
+     data-carcloudaccess-width="1200"
+     data-carcloudaccess-tailoring="leaseplan"
+     data-carcloudaccess-dome="opq"
+     data-carcloudaccess-steering="lhd"
+     data-carcloudaccess-modelyear="2018"
+     data-carcloudaccess-transmission="a"
+     data-carcloudaccess-bodyvariant="5"
+     data-carcloudaccess-bodysize=""
+     data-carcloudaccess-interior="433"
+     data-carcloudaccess-trim="super"
+     data-carcloudaccess-bodycolor="200"
+     data-carcloudaccess-roofcolor="414"
+     data-carcloudaccess-rimid="68p"
+/>
+<script>
+    const imgParams = {
         make: 'Alfa Romeo',
         model: 'Giulia',
         angle: '01',
@@ -67,9 +67,9 @@
         bodycolor: '414',
         roofcolor: '414',
         rimid: '68p'
-      };
+    };
 
-      const demo = async () => {
+    const demo = async () => {
         carcloudaccess.setBaseUrl('https://lpl.imagin.studio');
         console.log(`BaseUrl being used: ${carcloudaccess.getBaseUrl()}`);
 
@@ -79,21 +79,21 @@
 
         // Using promise.then
         carcloudaccess.getImage(Object.assign({}, imgParams, {
-          nearmatch: 0,
+            nearmatch: 0,
         })).then((data) => {
-          console.log('getImage nearmatch', data);
+            console.log('getImage nearmatch', data);
         });
         carcloudaccess.getImage(Object.assign({}, imgParams, {
-          nearmatch: 0,
-          bodycolor: '123',
+            nearmatch: 0,
+            bodycolor: '123',
         })).then((data) => {
-          console.log('getImage nearmatched image, expect 1', data);
+            console.log('getImage nearmatched image, expect 1', data);
         });
 
         carcloudaccess.autoloadImages();
-      };
+    };
 
-      demo();
-		</script>
-	</body>
+    demo();
+</script>
+</body>
 </html>
